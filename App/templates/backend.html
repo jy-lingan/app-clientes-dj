@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+<!--Navbar content-->
+{% block navbar-content %}
+<i class="bi bi-person-square"></i>&nbsp;&nbsp; Clientes
+{% endblock %}
+
+<!--Button on navbar-->
+{% block nav-btn %}
+<a href="{% url 'frontend' %}" class="btn btn-danger btn-sm" id="btn-nav" style="background-color: #EF5B0C;">Logout</a>
+{% endblock %}
+
+<!--Page conternt-->
+{% block content %}
+<h1 class="text-center text-success">Backend Page</h1>
+{% endblock %}
