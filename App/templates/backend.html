@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+<!--Title-->
+{% block title %}Todos los clientes{% endblock title %}
+
 <!--Navbar content-->
 {% block navbar-content %}
 <i class="bi bi-person-square"></i>&nbsp;&nbsp; Clientes
@@ -13,4 +16,9 @@
 <!--Page conternt-->
 {% block content %}
 <h1 class="text-center text-success">Backend Page</h1>
+<br>
+<div class="text-center">
+    <a href="{% url 'agregar_cliente' %}" class="btn btn-success btn-sm"
+        style="background-color: #3CCF4E; width: 200px;">Agregar cliente</a>
+</div>
 {% endblock %}

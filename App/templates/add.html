@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+<!--Title-->
+{% block title %}Agregar Cliente{% endblock title %}
+
+<!--Navbar content-->
+{% block navbar-content %}
+<i class="bi bi-person-plus-fill"></i>&nbsp;&nbsp; Agregar Cliente
+{% endblock %}
+
+<!--Button on navbar-->
+{% block nav-btn %}
+<a href="{% url 'frontend' %}" class="btn btn-success btn-sm" id="btn-nav" style="background-color: #3CCF4E;">Go
+    back</a>
+{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-body border-dark text-primary mt-5">
+                <span class="text-center h3" style="color: #003865;">Rellene el siguiente formulario</span>
+            </div>
+
+            <!-- Formulario -->
+            <form action="/agregar_cliente" method="POST" enctype="multipart/form-data"
+                class="card p-3 border-dard mt-3">
+                {% csrf_token %}
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text side-labe">Nombre:</span>
+                    <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text side-labe">Email:</span>
+                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text side-labe">Phone:</span>
+                    <input type="text" class="form-control" placeholder="Celular" name="phone" required>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text side-labe">Edad:</span>
+                    <input type="text" class="form-control" placeholder="Edad" name="age" required>
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <label class="input-group-text side-labe">Género</label>
+                    <select name="gender" class="form-select" required>
+                        <option value="">Seleccione una opción</option>
+                        <option disabled></option>
+                        <option value="">Hombre</option>
+                        <option value="">Mujer</option>
+                        <option value="">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" rows="7" placeholder="Descripción opcional..."
+                        name="note"></textarea>
+                </div>
+
+                <div class="d-group gap-2 mt-3">
+                    <button type="submit" class="btn btn-success btn-sm" style="background-color: #3CCF4E;"><span>
+                            <i class="bi bi-plus-circle-dotted"></i>
+                        </span> Agregar</button>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'backend' %}" class="btn btn-secondary btn-sm"
+                        style="background-color: #EF5B0C;"><span>
+                            <i class="bi bi-arrow-return-left"></i>
+                        </span> Regresar</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

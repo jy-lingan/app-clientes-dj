@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+<!--Title-->
+{% block title %}Login{% endblock title %}
+
 <!--Navbar content-->
 {% block navbar-content %}
 <i class="bi bi-robot"></i>&nbsp;&nbsp; Login
@@ -16,6 +19,8 @@
 
 <main class="container mt-5">
     <div class="card p-3 border-dark">
+        <!-- <a class="btn btn-outline-dark mt-3 fs-2 fw-bold"><i class="bi bi-lock">&nbsp;&nbsp; Acceso Restringido</i></a>
+        <span class="badge text-bg-warning"><i class="bi bi-lock">&nbsp;&nbsp; Acceso Restringido</i></span> -->
         <a class="btn btn-outline-dark mt-3 fs-2 fw-bold"><i class="bi bi-lock">&nbsp;&nbsp; Acceso Restringido</i></a>
         <form method="POST" autocomplete="off" novalidate>
             {% csrf_token %}

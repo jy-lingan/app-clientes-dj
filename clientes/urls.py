@@ -18,14 +18,18 @@ from django.urls import path, include
 from App import views
 
 urlpatterns = [
-    # Path del admin de Django 
+    # Path del admin de Django
     path('admin/', admin.site.urls),
     # Path del render principal de la aplicación
     path('', views.frontend, name='frontend'),
     # Path Login/Logout
     path('login/', include('django.contrib.auth.urls')),
-    
+
     # Backend de la aplicación
+    # Path de acceso al backends
+
     path('backend/', views.backend, name='backend'),
-    
+    # Path de agregar clientes
+    path('agregar_cliente', views.agregar_cliente, name='agregar_cliente'),
+
 ]
